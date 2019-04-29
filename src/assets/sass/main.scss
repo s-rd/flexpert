@@ -1,0 +1,15 @@
+@import "variables";
+@import "typography";
+@import "modules/flex-area";
+@import "modules/home";
+@import "modules/search-box";
+
+html * {
+  box-sizing: border-box;
+}
+body, html {
+  padding: 0;
+  margin: 0;
+  color: $color__dark;
+  background: $color__light;
+}
