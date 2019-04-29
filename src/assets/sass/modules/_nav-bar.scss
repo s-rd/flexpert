@@ -1,0 +1,22 @@
+.nav-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: $spacing--s;
+
+  &__logo {
+    padding: 1.2rem 2rem;
+    color: $color__white;
+    background: transparent;
+    border: solid 3px $color__primary;
+    border-radius: 2.7rem;
+    font-size: 1.25rem;
+    box-shadow: rgba($color__dark, 0.025) 0px 3px 20px;
+    text-decoration: none;
+    line-height: 1em;
+    display: inline-block;
+  }
+}

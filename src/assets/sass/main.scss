@@ -1,8 +1,10 @@
 @import "variables";
 @import "typography";
-@import "modules/flex-area";
 @import "modules/home";
+@import "modules/nav-bar";
 @import "modules/search-box";
+@import "modules/search-results";
+@import "modules/flex-area";
 
 html * {
   box-sizing: border-box;
@@ -10,6 +12,6 @@ html * {
 body, html {
   padding: 0;
   margin: 0;
-  color: $color__dark;
-  background: $color__light;
+  color: $color__light;
+  background: $color__quaternary;
 }
