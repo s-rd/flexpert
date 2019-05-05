@@ -32,7 +32,14 @@
     border: solid 3px $color__white;
     border-left: 0;
     color: $color__white;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
     padding: 0 $spacing--ss;
+    &:hover {
+      background: $color__quaternary;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
