@@ -2,9 +2,11 @@
   width: 70rem;
   max-width: 100%;
   min-height: 20rem;
-  background: rgba($color__dark, 0.1);
-  margin: $spacing 0;
-  border-radius: $border__radius;
+  margin: 0;
+  // border-radius: $border__radius;
+  border: solid 3px lighten($color__dark, 5);
+  border-color: $color__white;
+  border-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,11 +21,26 @@
   }
   &__box-group {
     list-style: none;
-    padding: 0;
+    padding: $spacing;
     margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
   }
   &__box {
-
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 10rem;
+    background-color: $color__primary;
+    margin: 0 $spacing--sss;
+    border-radius: $border__radius;
+    &:nth-of-type(4n+1) { background-color: $color__primary; }
+    &:nth-of-type(4n+3) { background-color: $color__secondary; }
+    &:nth-of-type(4n+4) { background-color: $color__tertiary; }
+    &:nth-of-type(4n+2) { background-color: $color__quaternary; }
   }
   &__controls {
 

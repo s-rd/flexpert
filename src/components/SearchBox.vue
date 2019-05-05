@@ -7,8 +7,8 @@
         placeholder="Center vertically… Wrap lines…"
         autofocus
       >
+      <button class="search-box__button">Search</button>
     </div>
-
   </div>
 </template>
 

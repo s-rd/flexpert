@@ -1,9 +1,9 @@
 <template>
   <div class="flex-area">
-    <span class="flex-area__placeholder">Flex playground</span>
+    <!-- <span class="flex-area__placeholder">Flex playground</span> -->
     <ul class="flex-area__box-group">
       <li class="flex-area__box" v-for="i in 5">
-        <!-- {{ i }} -->
+        <span>{{ i }}</span>
       </li>
     </ul>
     <div class="flex-area__controls">
