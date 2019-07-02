@@ -1,22 +1,30 @@
 <template>
   <div id="app" class="home">
+
     <nav-bar/>
-    <search-box/>
-    <flex-area/>
+
+    <div class="playground">
+      <flex-controls/>
+      <flex-output/>
+      <flex-preview/>
+    </div>
+
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar'
-import SearchBox from './components/SearchBox'
-import FlexArea from './components/FlexArea'
+import FlexControls from './components/FlexControls'
+import FlexOutput from './components/FlexOutput'
+import FlexPreview from './components/FlexPreview'
 
 export default {
   name: 'app',
   components: {
     NavBar,
-    SearchBox,
-    FlexArea,
+    FlexControls,
+    FlexOutput,
+    FlexPreview,
   },
 }
 </script>
