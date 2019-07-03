@@ -1,0 +1,22 @@
+$padding: $spacing--sss ($spacing--sss * 1.25);
+
+.select-box {
+  position: relative;
+
+  &__box {
+    background: $color__primary;
+    padding: $padding;
+    width: 12rem;
+    max-width: 100%;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  &__arrow {
+    position: absolute;
+    right: 1.2rem;
+    svg {
+      width: 1.3rem;
+      height: 0.9rem;
+    }
+  }
+}

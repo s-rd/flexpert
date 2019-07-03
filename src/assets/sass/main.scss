@@ -3,8 +3,10 @@
 @import "modules/home";
 @import "modules/nav-bar";
 @import "modules/playground";
+@import "modules/flex-controls";
 @import "modules/flex-output";
 @import "modules/flex-preview";
+@import "modules/select-box";
 
 html * {
   box-sizing: border-box;

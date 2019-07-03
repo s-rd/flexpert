@@ -1,0 +1,35 @@
+.flex-controls {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: $spacing--ssss 0 0;
+  }
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 $spacing--ss;
+    padding: 0;
+    &-content {
+
+    }
+    &-title {
+      margin: 0.1rem 0;
+      font-weight: 500;
+      font-size: 1.4rem;
+      letter-spacing: 0.025em;
+    }
+    &-attribute {
+      margin: 0.1rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    &-select {
+
+    }
+  }
+}

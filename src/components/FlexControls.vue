@@ -9,14 +9,82 @@
         <a href="#" @click="setactivetab(tab.id)">{{ tab.title }}</a>
       </li>
     </ul>
+    <ul class="flex-controls__group">
+      <li v-for="control in generalControls" class="flex-controls__item">
+        <div class="flex-controls__item-content">
+          <h3 class="flex-controls__item-title">{{ control.title }}</h3>
+          <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
+        </div>
+        <select-box :options="control.options" :default="control.default"/>
+      </li>
+    </ul>
+    <ul class="flex-controls__group">
+      <h2 class="flex-controls__group-title">Alignment</h2>
+      <li v-for="control in alignmentControls" class="flex-controls__item">
+        <div class="flex-controls__item-content">
+          <h3 class="flex-controls__item-title">{{ control.title }}</h3>
+          <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
+        </div>
+        <select-box :options="control.options" :default="control.default"/>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import SelectBox from './SelectBox'
+
 export default {
   name: 'flex-controls',
+  components: {
+    SelectBox,
+  },
   data() {
     return {
+      generalControls: [
+        {
+          title: 'Direction',
+          attribute: 'flex-direction',
+          options: [
+            'row', 'row-reverse', 'column', 'column-reverse',
+          ],
+          default: 'row',
+        },
+        {
+          title: 'Wrap',
+          attribute: 'flex-wrap',
+          options: [
+            'nowrap', 'wrap', 'wrap-reverse',
+          ],
+          default: 'nowrap',
+        },
+      ],
+      alignmentControls: [
+        {
+          title: 'Horizontal',
+          attribute: 'justify-content',
+          options: [
+            'nowrap', 'wrap', 'wrap-reverse',
+          ],
+          default: 'nowrap',
+        },
+        {
+          title: 'Vertical',
+          attribute: 'align-items',
+          options: [
+            'nowrap', 'wrap', 'wrap-reverse',
+          ],
+          default: 'nowrap',
+        },
+        {
+          title: 'Vertical (rows)',
+          attribute: 'align-content',
+          options: [
+            'nowrap', 'wrap', 'wrap-reverse',
+          ],
+          default: 'nowrap',
+        },
+      ],
       tabs: [
         {
           id: 1,
