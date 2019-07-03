@@ -4,9 +4,9 @@
     <nav-bar/>
 
     <div class="playground">
-      <flex-controls/>
-      <flex-output/>
-      <flex-preview/>
+      <flex-controls class="playground__controls"/>
+      <flex-output class="playground__output"/>
+      <flex-preview class="playground__preview"/>
     </div>
 
   </div>

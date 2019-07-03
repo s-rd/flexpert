@@ -1,0 +1,68 @@
+.playground {
+  display: flex;
+  flex-direction: row;
+  width: $width--content;
+  max-width: 100%;
+  height: 50rem;
+  border: solid 3px $color__white;
+
+  &__tab {
+    min-width: 9rem;
+    border-right: solid 3px $color__white;
+    a {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      padding: $spacing--ssss $spacing--sss;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      color: $color__white;
+
+    }
+    &:last-child {
+      border-right: none;
+    }
+    &:hover {
+      background: $color__primary;
+    }
+    &--active {
+      a {
+        background: $color__white;
+        color: $color__dark;
+      }
+    }
+  }
+  &__tab-bar {
+    display: flex;
+    position: absolute;
+    bottom: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: -3px;
+    list-style: none;
+    left: 0;
+    width: auto;
+    border: solid 3px $color__white;
+  }
+
+  &__controls,
+  &__output,
+  &__preview {
+    position: relative;
+    flex: auto;
+    border-right: solid 3px $color__white;
+    width: 30%;
+    padding: $spacing--ss;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  &__controls {
+  }
+  &__output {
+  }
+  &__preview {
+    width: 40%;
+  }
+}

@@ -1,6 +1,8 @@
 // Typography
-@import url('https://fonts.googleapis.com/css?family=Heebo:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
 $font__content: 'Heebo', sans-serif;
+$font__code: 'PT Mono', monospace;
 
 body {
   font-family: $font__content;
