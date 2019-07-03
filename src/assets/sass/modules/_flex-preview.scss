@@ -1,0 +1,22 @@
+.flex-preview {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 100%;
+  }
+  &__box {
+    flex: auto;
+    display: flex;
+    background: $color__primary;
+    justify-content: center;
+    align-items: center;
+    margin: $spacing--ssss;
+    box-sizing: border-box;
+    font-size: 22px;
+    font-weight: 500;
+    &:nth-of-type(2) { background: $color__primary--tint-1; }
+    &:nth-of-type(3) { background: $color__primary--tint-2; }
+    &:nth-of-type(4) { background: $color__primary--tint-3; }
+  }
+}
