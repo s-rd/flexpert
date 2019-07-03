@@ -38,14 +38,14 @@ export default {
       tabs: [
         {
           id: 1,
-          title: 'Sass Output',
+          title: 'CSS Output',
         },
         {
           id: 2,
-          title: 'CSS output',
+          title: 'Sass output',
         },
       ],
-      activeTabId: 1,
+      activeTabId: 2,
     }
   },
   methods: {
