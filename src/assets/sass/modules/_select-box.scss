@@ -1,22 +1,99 @@
-$padding: $spacing--sss ($spacing--sss * 1.25);
+$padding: 1rem 1.5rem;
+$width--min: 13rem;
 
 .select-box {
   position: relative;
+  user-select: none;
 
   &__box {
     background: $color__primary;
     padding: $padding;
-    width: 12rem;
+    width: $width--min;
     max-width: 100%;
     font-size: 1.2rem;
     font-weight: 500;
+    &:hover {
+      background: darken($color__primary, 5);
+    }
   }
   &__arrow {
     position: absolute;
     right: 1.2rem;
+    z-index: 3;
     svg {
-      width: 1.3rem;
-      height: 0.9rem;
+      width: 1.2rem;
+      height: 0.8rem;
+    }
+  }
+  &__close-area {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba($color__dark, 0.75);
+    z-index: 1;
+    transition: ease 0.15s all;
+  }
+
+  &__options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: auto;
+    padding: 0;
+    width: auto;
+    min-width: 100%;
+    visibility: hidden;
+    z-index: 2;
+    box-shadow: rgba($color__dark, 0.15) 0px 4px 25px;
+  }
+  &__option {
+    display: block;
+    background: darken($color__primary, 10);
+    color: $color__white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: $padding;
+    border-bottom: solid 3px darken($color__primary, 15);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: ease 0.15s transform, ease 0.15s opacity;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:hover {
+      background: $color__primary;
+    }
+    &--selected {
+      background: $color__primary;
+    }
+  }
+
+  &--expanded {
+    z-index: 10;
+    .select-box__close-area {
+      visibility: visible;
+      opacity: 1;
+    }
+    .select-box__options {
+      visibility: visible;
+    }
+    .select-box__option {
+      opacity: 1;
+      transform: scale(1);
+      &:nth-of-type(1) { transition-delay: 0.00s; }
+      &:nth-of-type(2) { transition-delay: 0.03s; }
+      &:nth-of-type(3) { transition-delay: 0.06s; }
+      &:nth-of-type(4) { transition-delay: 0.09s; }
+      &:nth-of-type(5) { transition-delay: 0.12s; }
+      &:nth-of-type(6) { transition-delay: 0.15s; }
+    }
+    .select-box__arrow {
+      transform: rotate(180deg);
     }
   }
 }

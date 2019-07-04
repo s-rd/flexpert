@@ -15,7 +15,11 @@
           <h3 class="flex-controls__item-title">{{ control.title }}</h3>
           <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
         </div>
-        <select-box :options="control.options" :default="control.default"/>
+        <select-box
+          :options="control.options"
+          :default="control.default"
+          :value.sync="control.value"
+        />
       </li>
     </ul>
     <ul class="flex-controls__group">
@@ -25,7 +29,11 @@
           <h3 class="flex-controls__item-title">{{ control.title }}</h3>
           <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
         </div>
-        <select-box :options="control.options" :default="control.default"/>
+        <select-box
+          :options="control.options"
+          :default="control.default"
+          :value.sync="control.value"
+        />
       </li>
     </ul>
   </div>
@@ -49,6 +57,7 @@ export default {
             'row', 'row-reverse', 'column', 'column-reverse',
           ],
           default: 'row',
+          value: 'column',
         },
         {
           title: 'Wrap',
@@ -57,6 +66,7 @@ export default {
             'nowrap', 'wrap', 'wrap-reverse',
           ],
           default: 'nowrap',
+          value: 'wrap',
         },
       ],
       alignmentControls: [
@@ -64,25 +74,28 @@ export default {
           title: 'Horizontal',
           attribute: 'justify-content',
           options: [
-            'nowrap', 'wrap', 'wrap-reverse',
+            'flex-start', 'flex-end', 'center', 'space-around', 'space-between',
           ],
-          default: 'nowrap',
+          default: 'flex-start',
+          value: 'center',
         },
         {
           title: 'Vertical',
           attribute: 'align-items',
           options: [
-            'nowrap', 'wrap', 'wrap-reverse',
+            'stretch', 'baseline', 'center', 'flex-start', 'flex-end',
           ],
-          default: 'nowrap',
+          default: 'stretch',
+          value: 'stretch',
         },
         {
           title: 'Vertical (rows)',
           attribute: 'align-content',
           options: [
-            'nowrap', 'wrap', 'wrap-reverse',
+            'stretch', 'center', 'flex-start', 'flex-end', 'space-around', 'space-between',
           ],
-          default: 'nowrap',
+          default: 'stretch',
+          value: 'stretch',
         },
       ],
       tabs: [

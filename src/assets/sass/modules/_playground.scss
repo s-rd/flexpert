@@ -7,13 +7,13 @@
   border: solid 3px $color__white;
 
   &__tab {
-    min-width: 9rem;
+    width: 10.5rem;
     border-right: solid 3px $color__white;
     a {
       display: block;
       font-size: 15px;
       font-weight: 500;
-      padding: $spacing--ssss $spacing--sss;
+      padding: ($spacing--sss * 0.65) $spacing--sss;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 0.02em;
