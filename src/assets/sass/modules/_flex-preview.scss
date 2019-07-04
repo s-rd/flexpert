@@ -4,6 +4,7 @@
     flex-direction: column;
     padding: 0;
     height: 100%;
+    transition: ease 0.3s all;
   }
   &__box {
     flex: auto;
@@ -15,6 +16,7 @@
     box-sizing: border-box;
     font-size: 22px;
     font-weight: 500;
+    transition: ease 0.3s all;
     &:nth-of-type(2) { background: $color__primary--tint-1; }
     &:nth-of-type(3) { background: $color__primary--tint-2; }
     &:nth-of-type(4) { background: $color__primary--tint-3; }

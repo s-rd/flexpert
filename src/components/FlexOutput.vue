@@ -10,14 +10,7 @@
       </li>
     </ul>
 
-    <pre>
-<code>.container {
-     flex-direction: row;
-     flex-wrap: nowrap;
-     justify-content: center;
-     align-items: center;
-     align-content: center;
-}
+    <pre><code>.container {{ input }}
 
 .child {
      flex: 0 1 auto;
@@ -33,6 +26,12 @@
 <script>
 export default {
   name: 'flex-ouput',
+  props: {
+    input: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       tabs: [

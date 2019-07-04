@@ -4,9 +4,9 @@
     <nav-bar/>
 
     <div class="playground">
-      <flex-controls class="playground__controls"/>
-      <flex-output class="playground__output"/>
-      <flex-preview class="playground__preview"/>
+      <flex-controls :value.sync="controls" class="playground__controls"/>
+      <flex-output :input="controls" class="playground__output"/>
+      <flex-preview :properties="controls" class="playground__preview"/>
     </div>
 
   </div>
@@ -25,6 +25,11 @@ export default {
     FlexControls,
     FlexOutput,
     FlexPreview,
+  },
+  data() {
+    return {
+      controls: {},
+    }
   },
 }
 </script>

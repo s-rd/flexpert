@@ -5,7 +5,7 @@
         <a href="#">Preview</a>
       </li>
     </ul>
-    <div class="flex-preview__content">
+    <div class="flex-preview__content" :style="properties">
       <div v-for="(box, index) in boxes" class="flex-preview__box">
         {{ index + 1 }}
       </div>
@@ -16,6 +16,12 @@
 <script>
 export default {
   name: 'flex-preview',
+  props: {
+    properties: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       boxes: 5,

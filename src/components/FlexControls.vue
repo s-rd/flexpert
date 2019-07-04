@@ -47,6 +47,12 @@ export default {
   components: {
     SelectBox,
   },
+  props: {
+    value: {
+      type: Object,
+      required: true,
+    },
+  },
   data() {
     return {
       generalControls: [
@@ -120,9 +126,36 @@ export default {
       this.activeTabId = id
     },
   },
+  mounted() {
+    this.$emit('update:value', this.valueOutput)
+  },
+  watch: {
+    generalControls: {
+      handler(newVal, oldVal) {
+        this.$emit('update:value', this.valueOutput)
+      },
+      deep: true,
+    },
+    alignmentControls: {
+      handler(newVal, oldVal) {
+        this.$emit('update:value', this.valueOutput)
+      },
+      deep: true,
+    },
+  },
   computed: {
     activeTab() {
       return this.tabs[this.activeTabId]
+    },
+    valueOutput() {
+      let controls = {}
+      this.generalControls.forEach(c => {
+        controls[c.attribute] = c.value
+      })
+      this.alignmentControls.forEach(c => {
+        controls[c.attribute] = c.value
+      })
+      return controls
     },
   },
 }
