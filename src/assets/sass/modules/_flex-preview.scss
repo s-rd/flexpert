@@ -5,6 +5,8 @@
     padding: 0;
     height: 100%;
     transition: ease 0.3s all;
+    z-index: 10;
+    position: relative;
   }
   &__box {
     flex: auto;
@@ -13,10 +15,13 @@
     justify-content: center;
     align-items: center;
     margin: $spacing--ssss;
+    min-width: 8rem;
+    min-height: 10rem;
     box-sizing: border-box;
     font-size: 22px;
     font-weight: 500;
     transition: ease 0.3s all;
+    box-shadow: rgba($color__dark, 0.25) 0px 4px 25px;
     &:nth-of-type(2) { background: $color__primary--tint-1; }
     &:nth-of-type(3) { background: $color__primary--tint-2; }
     &:nth-of-type(4) { background: $color__primary--tint-3; }

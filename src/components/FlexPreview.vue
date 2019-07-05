@@ -1,6 +1,13 @@
 <template>
   <div class="flex-preview">
     <ul class="playground__tab-bar">
+      <li class="playground__tab boxes">
+        <a href="#">
+          {{ boxes }} boxes
+          <span @click.prevent="addBox" class="add">+</span>
+          <span @click.prevent="removeBox" class="remove">-</span>
+        </a>
+      </li>
       <li class="playground__tab playground__tab--active">
         <a href="#">Preview</a>
       </li>
@@ -24,8 +31,16 @@ export default {
   },
   data() {
     return {
-      boxes: 5,
+      boxes: 6,
     }
+  },
+  methods: {
+    addBox() {
+      this.boxes += 1
+    },
+    removeBox() {
+      this.boxes -= 1
+    },
   },
 }
 </script>

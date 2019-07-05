@@ -41,7 +41,7 @@ export default {
         },
         {
           id: 2,
-          title: 'Sass output',
+          title: 'SCSS Output',
         },
       ],
       activeTabId: 2,
@@ -55,6 +55,9 @@ export default {
   computed: {
     activeTab() {
       return this.tabs[this.activeTabId]
+    },
+    sassOutput() {
+      return
     },
   },
 }

@@ -15,4 +15,5 @@ html, body {
   flex-direction: column;
   padding: $spacing--bbb $spacing $spacing;
   height: 100%;
+  overflow-x: hidden;
 }

@@ -6,9 +6,12 @@
     <div class="select-box__box" @mousedown="open">
       {{ selected }}
       <span class="select-box__arrow">
-        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 2L8 8L14 2" stroke="black" stroke-width="3"/>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.1px"
+        	 height="21.3px" viewBox="0 0 14.1 21.3" style="enable-background:new 0 0 14.1 21.3;" xml:space="preserve">
+        <path class="st0" style="fill: none; stroke:#000; stroke-width:3;" d="M1.1,13.2l6,6l6-6"/>
+        <path class="st0" style="fill: none; stroke:#000; stroke-width:3;" d="M13.1,8.1l-6-6l-6,6"/>
         </svg>
+
       </span>
     </div>
     <span @click="close" class="select-box__close-area"/>
