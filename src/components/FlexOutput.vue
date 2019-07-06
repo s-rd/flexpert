@@ -10,11 +10,9 @@
       </li>
     </ul>
 
-    <pre><code>.container {{ input }}
+    <pre><code>.container {{ input.container }}
 
-.child {
-     flex: 0 1 auto;
-}
+.child {{ input.items }}
 
 #child-1 {
      flex: 1;
@@ -57,7 +55,7 @@ export default {
       return this.tabs[this.activeTabId]
     },
     sassOutput() {
-      return
+      return ''
     },
   },
 }

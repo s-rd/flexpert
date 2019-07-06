@@ -1,51 +1,73 @@
 <template>
   <div class="flex-controls">
-    <ul class="playground__tab-bar">
-      <li
-        v-for="tab in tabs"
-        class="playground__tab"
-        :class="activeTabId === tab.id && 'playground__tab--active'"
-      >
-        <a href="#" @click="setactivetab(tab.id)">{{ tab.title }}</a>
-      </li>
-    </ul>
-    <ul class="flex-controls__group">
-      <li v-for="control in generalControls" class="flex-controls__item">
-        <div class="flex-controls__item-content">
-          <h3 class="flex-controls__item-title">{{ control.title }}</h3>
-          <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
-        </div>
-        <select-box
-          :options="control.options"
-          :default="control.default"
-          :value.sync="control.value"
-        />
-      </li>
-    </ul>
-    <ul class="flex-controls__group">
-      <h2 class="flex-controls__group-title">Alignment</h2>
-      <li v-for="control in alignmentControls" class="flex-controls__item">
-        <div class="flex-controls__item-content">
-          <h3 class="flex-controls__item-title">{{ control.title }}</h3>
-          <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
-        </div>
-        <select-box
-          :options="control.options"
-          :default="control.default"
-          :value.sync="control.value"
-        />
-      </li>
-    </ul>
+    <tab-group :tabs="tabs" :active-tab.sync="tab">
+
+      <!-- Container -->
+      <div v-show="tab === 0">
+        <ul class="flex-controls__group">
+          <li v-for="control in controls.general" class="flex-controls__item">
+            <div class="flex-controls__item-content">
+              <h3 class="flex-controls__item-title">{{ control.title }}</h3>
+              <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
+            </div>
+            <select-box
+              :options="control.options"
+              :default="control.default"
+              :value.sync="control.value"
+            />
+          </li>
+        </ul>
+        <ul class="flex-controls__group">
+          <h2 class="flex-controls__group-title">Alignment</h2>
+          <li v-for="control in controls.alignment" class="flex-controls__item">
+            <div class="flex-controls__item-content">
+              <h3 class="flex-controls__item-title">{{ control.title }}</h3>
+              <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
+            </div>
+            <select-box
+              :options="control.options"
+              :default="control.default"
+              :value.sync="control.value"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Items -->
+      <div v-show="tab === 1">
+        <ul class="flex-controls__group">
+          <li v-for="control in controls.items" class="flex-controls__item">
+            <div class="flex-controls__item-content">
+              <h3 class="flex-controls__item-title">{{ control.title }}</h3>
+              <h4 class="flex-controls__item-attribute">{{ control.attribute }}</h4>
+            </div>
+            <select-box
+              :options="control.options"
+              :default="control.default"
+              :value.sync="control.value"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Custom -->
+      <div v-show="tab === 2">
+        Heisann custom tab
+      </div>
+
+    </tab-group>
   </div>
 </template>
 
 <script>
 import SelectBox from './SelectBox'
+import TabGroup from './TabGroup'
 
 export default {
   name: 'flex-controls',
   components: {
     SelectBox,
+    TabGroup,
   },
   props: {
     value: {
@@ -55,88 +77,108 @@ export default {
   },
   data() {
     return {
-      generalControls: [
-        {
-          title: 'Direction',
-          attribute: 'flex-direction',
-          options: [
-            'row', 'row-reverse', 'column', 'column-reverse',
-          ],
-          default: 'row',
-          value: 'column',
-        },
-        {
-          title: 'Wrap',
-          attribute: 'flex-wrap',
-          options: [
-            'nowrap', 'wrap', 'wrap-reverse',
-          ],
-          default: 'nowrap',
-          value: 'wrap',
-        },
-      ],
-      alignmentControls: [
-        {
-          title: 'Horizontal',
-          attribute: 'justify-content',
-          options: [
-            'flex-start', 'flex-end', 'center', 'space-around', 'space-between',
-          ],
-          default: 'flex-start',
-          value: 'center',
-        },
-        {
-          title: 'Vertical',
-          attribute: 'align-items',
-          options: [
-            'stretch', 'baseline', 'center', 'flex-start', 'flex-end',
-          ],
-          default: 'stretch',
-          value: 'stretch',
-        },
-        {
-          title: 'Vertical (rows)',
-          attribute: 'align-content',
-          options: [
-            'stretch', 'center', 'flex-start', 'flex-end', 'space-around', 'space-between',
-          ],
-          default: 'stretch',
-          value: 'stretch',
-        },
-      ],
+      controls: {
+        general: [
+          {
+            title: 'Direction',
+            attribute: 'flex-direction',
+            options: [
+              'row', 'row-reverse', 'column', 'column-reverse',
+            ],
+            default: 'row',
+            value: 'column',
+          },
+          {
+            title: 'Wrap',
+            attribute: 'flex-wrap',
+            options: [
+              'nowrap', 'wrap', 'wrap-reverse',
+            ],
+            default: 'nowrap',
+            value: 'wrap',
+          },
+        ],
+        alignment: [
+          {
+            title: 'Horizontal',
+            attribute: 'justify-content',
+            options: [
+              'flex-start', 'flex-end', 'center', 'space-around', 'space-between',
+            ],
+            default: 'flex-start',
+            value: 'center',
+          },
+          {
+            title: 'Vertical',
+            attribute: 'align-items',
+            options: [
+              'stretch', 'baseline', 'center', 'flex-start', 'flex-end',
+            ],
+            default: 'stretch',
+            value: 'stretch',
+          },
+          {
+            title: 'Vertical (rows)',
+            attribute: 'align-content',
+            options: [
+              'stretch', 'center', 'flex-start', 'flex-end', 'space-around', 'space-between',
+            ],
+            default: 'stretch',
+            value: 'stretch',
+          },
+        ],
+        items: [
+          {
+            title: 'Basis',
+            attribute: 'flex-basis',
+            options: [
+              '50%', '1', '2', '3', '4',
+            ],
+            default: '1',
+            value: '2',
+          },
+          {
+            title: 'Grow',
+            attribute: 'flex-grow',
+            options: [
+              '0', '1', '2', '3', '4',
+            ],
+            default: '1',
+            value: '2',
+          },
+          {
+            title: 'Shrink',
+            attribute: 'flex-shrink',
+            options: [
+              '0', '1', '2', '3', '4',
+            ],
+            default: '1',
+            value: '2',
+          },
+        ],
+      },
       tabs: [
         {
-          id: 1,
-          title: 'container',
+          i: 0,
+          title: 'Container',
         },
         {
-          id: 2,
-          title: 'items',
+          i: 1,
+          title: 'Items',
         },
         {
-          id: 3,
-          title: 'custom',
+          i: 2,
+          title: 'Custom',
         },
       ],
-      activeTabId: 1,
+      tab: 0,
     }
-  },
-  methods: {
-    setActiveTab(id) {
-      this.activeTabId = id
-    },
   },
   mounted() {
     this.$emit('update:value', this.valueOutput)
   },
   watch: {
-    generalControls: {
-      handler(newVal, oldVal) {
-        this.$emit('update:value', this.valueOutput)
-      },
-      deep: true,
-    },
-    alignmentControls: {
+    controls: {
       handler(newVal, oldVal) {
         this.$emit('update:value', this.valueOutput)
       },
@@ -144,16 +186,19 @@ export default {
     },
   },
   computed: {
-    activeTab() {
-      return this.tabs[this.activeTabId]
-    },
     valueOutput() {
-      let controls = {}
-      this.generalControls.forEach(c => {
-        controls[c.attribute] = c.value
+      let controls = {
+        container: {},
+        items: {},
+      }
+      this.controls.general.forEach(c => {
+        controls.container[c.attribute] = c.value
       })
-      this.alignmentControls.forEach(c => {
-        controls[c.attribute] = c.value
+      this.controls.alignment.forEach(c => {
+        controls.container[c.attribute] = c.value
+      })
+      this.controls.items.forEach(c => {
+        controls.items[c.attribute] = c.value
       })
       return controls
     },
