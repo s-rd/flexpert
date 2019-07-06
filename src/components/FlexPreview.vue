@@ -15,7 +15,13 @@
     <div class="flex-preview__content" :style="properties">
       <div v-for="(box, index) in boxes" class="flex-preview__box">
         {{ index + 1 }}
-        <span @click="removeBox" class="close">x</span>
+        <span @click="removeBox" class="flex-preview__box-close">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14.1px"
+          	 height="14.1px" viewBox="0 0 14.1 14.1" style="enable-background:new 0 0 14.1 14.1;" xml:space="preserve">
+          <path class="st0" style="fill:none;stroke-width:3;" d="M1.1,1.1l6,6l6-6"/>
+          <path class="st0" style="fill:none;stroke-width:3;" d="M13.1,13.1l-6-6l-6,6"/>
+          </svg>
+        </span>
       </div>
     </div>
   </div>

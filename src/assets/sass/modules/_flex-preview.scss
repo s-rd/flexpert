@@ -24,6 +24,35 @@
     box-shadow: rgba($color__dark, 0.25) 0px 4px 25px;
     border-bottom: solid 5px transparent;
     border-color: darken($color__primary, 10);
+    position: relative;
+
+    &:hover {
+      .flex-preview__box-close {
+        opacity: 0.25;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      opacity: 0;
+      transition: ease 0.15s opacity;
+      height: 2rem;
+      width: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      svg { stroke: $color__white; }
+      &:hover {
+        opacity: 1 !important;
+        transition-duration: 0.15s;
+        background: rgba($color__dark, 0.25);
+      }
+    }
     &:nth-of-type(2) {
       background: $color__primary--tint-1;
       border-color: darken($color__primary--tint-1, 10);
