@@ -22,8 +22,19 @@
     font-weight: 500;
     transition: ease 0.3s all;
     box-shadow: rgba($color__dark, 0.25) 0px 4px 25px;
-    &:nth-of-type(2) { background: $color__primary--tint-1; }
-    &:nth-of-type(3) { background: $color__primary--tint-2; }
-    &:nth-of-type(4) { background: $color__primary--tint-3; }
+    border-bottom: solid 5px transparent;
+    border-color: darken($color__primary, 10);
+    &:nth-of-type(2) {
+      background: $color__primary--tint-1;
+      border-color: darken($color__primary--tint-1, 10);
+    }
+    &:nth-of-type(3) {
+      background: $color__primary--tint-2;
+      border-color: darken($color__primary--tint-2, 10);
+    }
+    &:nth-of-type(4) {
+      background: $color__primary--tint-3;
+      border-color: darken($color__primary--tint-3, 10);
+    }
   }
 }

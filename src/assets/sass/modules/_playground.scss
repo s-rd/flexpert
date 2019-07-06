@@ -42,6 +42,13 @@
         &.remove {
           right: 2.5rem;
         }
+        &--disabled {
+          opacity: 0.25;
+          cursor: default;
+          &:hover {
+            background: transparent;
+          }
+        }
       }
     }
     &:last-child {

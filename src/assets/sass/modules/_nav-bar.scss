@@ -8,6 +8,8 @@
   padding: $spacing--s;
   align-items: baseline;
   justify-content: space-between;
+  background: linear-gradient(to bottom, rgba($color__dark, 1), rgba($color__dark, 0));
+  z-index: 10;
 
   &__logo {
     color: $color__white;
