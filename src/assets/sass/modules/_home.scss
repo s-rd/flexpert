@@ -13,7 +13,10 @@ html, body {
   align-content: center;
   align-items: center;
   flex-direction: column;
-  padding: $spacing--bbb $spacing $spacing;
   height: 100%;
+  padding: $spacing--sss $spacing--sss $spacing;
   overflow-x: hidden;
+  @include from(medium) {
+    padding: $spacing--bbb $spacing $spacing;
+  }
 }

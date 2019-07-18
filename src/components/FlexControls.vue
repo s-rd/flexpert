@@ -3,7 +3,7 @@
     <tab-group :tabs="tabs" :active-tab.sync="tab">
 
       <!-- Container -->
-      <div v-show="tab === 0">
+      <div v-show="tab === 0" class="playground__view">
         <ul class="flex-controls__group">
           <li v-for="control in controls.general" class="flex-controls__item">
             <div class="flex-controls__item-content">
@@ -34,7 +34,7 @@
       </div>
 
       <!-- Items -->
-      <div v-show="tab === 1">
+      <div v-show="tab === 1" class="playground__view">
         <ul class="flex-controls__group">
           <li v-for="control in controls.items" class="flex-controls__item">
             <div class="flex-controls__item-content">
@@ -51,8 +51,10 @@
       </div>
 
       <!-- Custom -->
-      <div v-show="tab === 2">
-        Heisann custom tab
+      <div v-show="tab === 2" class="playground__view">
+        <div class="playground__placeholder">
+          <p>Click on a box in the preview section to apply custom styles to it</p>
+        </div>
       </div>
 
     </tab-group>
