@@ -2,11 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: $width--content;
-  max-width: 95%;
+  width: auto;
+  margin: $spacing 0 0;
   height: auto;
   border: solid 3px $color__white;
-  margin-top: $spacing--b;
 
   &__tab {
     width: 10.5rem;
@@ -86,9 +85,11 @@
   &__controls,
   &__output,
   &__preview {
+    width: auto;
+    box-sizing: border-box;
     position: relative;
     flex: 1;
-    min-width: 29rem;
+    margin: 0;
     border-right: solid 3px $color__white;
     padding: $spacing--ss;
     background: rgba($color__dark, 0.75);
@@ -143,5 +144,11 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-top: 0;
+    &__controls,
+    &__output,
+    &__preview {
+      min-width: 29rem;
+      padding: $spacing--ss;
+    }
   }
 }
