@@ -7,3 +7,10 @@ $font__code: 'PT Mono', monospace;
 body {
   font-family: $font__content;
 }
+
+%font-size {
+  font-size: $font__size;
+  @include from(medium) {
+    font-size: $font__size--s;
+  }
+}
