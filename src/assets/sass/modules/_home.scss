@@ -1,9 +1,13 @@
 html, body {
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0;
+  min-width: 320px;
   >* {
     box-sizing: border-box;
+  }
+  @include from(large) {
+    height: 100%;
   }
 }
 

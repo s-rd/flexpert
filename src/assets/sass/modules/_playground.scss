@@ -1,15 +1,17 @@
+$border: solid 3px $color__white;
+
 .playground {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: auto;
+  width: 100%;
   margin: $spacing 0 0;
   height: auto;
-  border: solid 3px $color__white;
+  border: $border;
 
   &__tab {
     width: 10.5rem;
-    border-right: solid 3px $color__white;
+    border-right: $border;
     a {
       display: block;
       font-size: 15px;
@@ -79,20 +81,20 @@
     list-style: none;
     right: 0;
     width: auto;
-    border: solid 3px $color__white;
+    border: $border;
   }
 
   &__controls,
   &__output,
   &__preview {
-    width: auto;
+    width: 100%;
     box-sizing: border-box;
     position: relative;
     flex: 1;
     margin: 0;
-    border-right: solid 3px $color__white;
     padding: $spacing--ss;
     background: rgba($color__dark, 0.75);
+    border-bottom: $border;
     &:last-child {
       border-right: none;
     }
@@ -100,6 +102,16 @@
       flex: 1;
       display: flex;
       height: 100%;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      right: -5px;
+      top: -3px;
+      height: $spacing--b;
+      transform: translateY(-100%);
+      background: $color__dark;
     }
   }
   &__controls {
@@ -116,12 +128,15 @@
   }
   &__output {
     z-index: 2;
+    margin-top: $spacing--b;
+    border-top: $border;
   }
   &__preview {
-    width: auto;
     flex-basis: auto;
     z-index: 1;
     margin-left: auto;
+    margin-top: $spacing--b;
+    border-top: $border;
   }
 
   &__view {
@@ -137,18 +152,56 @@
       flex: auto;
     }
   }
+
   @include from(medium) {
-    width: $width--large;
-    height: 50rem;
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 0;
+    &__controls {
+      flex-basis: 50%;
+      border-right: $border;
+      border-bottom: $border;
+    }
+    &__output {
+      flex-basis: 50%;
+      border-right: none;
+      border-bottom: $border;
+      border-top: 0;
+      margin-top: 0;
+      &::before { display: none; }
+    }
+    &__preview {
+      position: relative;
+      margin-top: $spacing--b;
+      border-top: $border;
+      border-bottom: 0;
+      flex-basis: 100%;
+      width: auto;
+    }
+  }
+  @include from(large) {
+    width: $width--large;
+    max-width: 90%;
+    height: 60rem;
+    flex-wrap: nowrap;
     &__controls,
     &__output,
     &__preview {
-      min-width: 29rem;
+      max-width: 31rem;
       padding: $spacing--ss;
+      border-right: $border;
+      border-bottom: none;
+    }
+    &__preview {
+      max-width: none;
+      margin-top: 0;
+      border-top: 0;
+      &::before {
+        display: none;
+      }
     }
   }
 }

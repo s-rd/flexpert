@@ -7,9 +7,9 @@
       <div v-show="tab === 1">
         <pre><code>.container {{ input.container }}
 
-.child {{ input.items }}
+.item {{ input.items }}
 
-#child-1 {
+#item-1 {
      flex: 1;
 }</code>
         </pre>

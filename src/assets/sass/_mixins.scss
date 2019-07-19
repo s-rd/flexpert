@@ -1,9 +1,9 @@
 @mixin from($size: "medium") {
-  $width: 768px;
+  $width: 910px;
   @if $size == "large" {
-    $width: 1200px;
+    $width: 1400px;
   } @else if $size == "huge" {
-    $width: 1600px;
+    $width: 1700px;
   }
   @media (min-width: $width) {
     @content;
