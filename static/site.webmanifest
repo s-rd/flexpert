@@ -1,0 +1,7 @@
+{
+    "name": "Flexpert",
+    "short_name": "Flexpert",
+    "theme_color": "#5f00ff",
+    "background_color": "#000000",
+    "display": "standalone"
+}
