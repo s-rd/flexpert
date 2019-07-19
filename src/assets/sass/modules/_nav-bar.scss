@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   width: 100%;
-  padding: $spacing--sss 0 $spacing;
+  padding: $spacing--ss $spacing--ss 0;
+  margin-bottom: $spacing;
   flex-direction: column;
   align-items: flex-start;
-  background: linear-gradient(to bottom, rgba($color__dark, 1), rgba($color__dark, 0));
   z-index: 10;
 
   &__logo {
@@ -44,7 +44,7 @@
     right: 0;
     display: flex;
     justify-content: center;
-    padding: $spacing--bbbb $spacing--ss 10vw;
+    padding: $spacing--bbbb $spacing--sss 10vw;
     background: linear-gradient(to bottom, rgba($color__dark, 0), rgba($color__dark, 1));
     p {
       width: 25rem;
@@ -65,6 +65,7 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+    background: linear-gradient(to bottom, rgba($color__dark, 1), rgba($color__dark, 0));
     &__mobile-note {
       display: none;
     }

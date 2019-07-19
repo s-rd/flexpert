@@ -18,7 +18,7 @@ html, body {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  padding: $spacing--sss $spacing--sss $spacing;
+  padding: 0;
   overflow-x: hidden;
   @include from(medium) {
     padding: $spacing--bbb $spacing $spacing;
