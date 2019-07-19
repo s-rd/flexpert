@@ -191,7 +191,7 @@ $border: solid 3px $color__white;
     &__controls,
     &__output,
     &__preview {
-      max-width: 31rem;
+      width: 31rem;
       padding: $spacing--ss;
       border-right: $border;
       border-bottom: none;
