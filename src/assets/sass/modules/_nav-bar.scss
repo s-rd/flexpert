@@ -38,10 +38,21 @@
   }
   &__mobile-note {
     @extend %font-size;
-    padding: $spacing--sss;
-    margin: $spacing--s 0 0;
-    background: $color__primary;
-    border-bottom: solid 5px darken($color__primary, 10);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: $spacing--bbbb $spacing--ss 10vw;
+    background: linear-gradient(to bottom, rgba($color__dark, 0), rgba($color__dark, 1));
+    p {
+      width: 25rem;
+      padding: $spacing--sss;
+      margin: 0;
+      background: $color__primary;
+      border-bottom: solid 5px darken($color__primary, 10);
+    }
   }
 
   @include from(medium) {
