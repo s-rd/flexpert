@@ -29,26 +29,25 @@
   }
   &__link {
     color: $color__white;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: $font__size;;
     font-weight: 400;
-    &:hover {
-      text-decoration: underline;
-    }
   }
   &__mobile-note {
     @extend %font-size;
     position: fixed;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     padding: $spacing--bbbb $spacing--ss 15vw;
-    background: linear-gradient(to bottom, rgba($color__dark, 0), rgba($color__dark, 1));
+    background: linear-gradient(to bottom, rgba($color__dark, 0.5), rgba($color__dark, 1));
     p {
       width: 25rem;
-      padding: $spacing--sss $spacing--sss $spacing--s;
+      padding: $spacing--ss $spacing--ss $spacing--s;
       margin: 0;
       background: $color__primary;
       border-bottom: solid 5px darken($color__primary, 10);
@@ -85,6 +84,17 @@
     align-items: baseline;
     justify-content: space-between;
     background: linear-gradient(to bottom, rgba($color__dark, 1), rgba($color__dark, 0));
+    &__link {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__mobile-note p {
+      padding: $spacing--ss $spacing--ss $spacing--s;
+    }
+  }
+  @include from(large) {
     &__mobile-note {
       display: none;
     }

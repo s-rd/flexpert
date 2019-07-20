@@ -9,7 +9,7 @@
       <p>
         This thing works on virtually any modern device, but it'll
         probably be more valuable on a device with a larger display.
-        <a href="#" class="nav-bar__mobile-close" @click="closeNote">Sure, whatever</a>
+        <a class="nav-bar__mobile-close" @click="closeNote">Sure, whatever</a>
       </p>
     </div>
 
