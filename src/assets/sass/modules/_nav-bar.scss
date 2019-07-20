@@ -44,15 +44,34 @@
     right: 0;
     display: flex;
     justify-content: center;
-    padding: $spacing--bbbb $spacing--sss 10vw;
+    padding: $spacing--bbbb $spacing--ss 15vw;
     background: linear-gradient(to bottom, rgba($color__dark, 0), rgba($color__dark, 1));
     p {
       width: 25rem;
-      padding: $spacing--sss;
+      padding: $spacing--sss $spacing--sss $spacing--s;
       margin: 0;
       background: $color__primary;
       border-bottom: solid 5px darken($color__primary, 10);
+      position: relative;
     }
+  }
+  &__mobile-close {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: auto;
+    display: block;
+    padding: $spacing--ssss $spacing--sss;
+    transform: translate(-50%, 50%);
+    background: $color__secondary;
+    border: solid 3px $color__white;
+    color: $color__white;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.02em;
   }
 
   @include from(medium) {
