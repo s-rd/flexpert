@@ -165,12 +165,11 @@ $border: solid 3px $color__white;
   }
 
   @include from(medium) {
-    max-width: 100%;
-    width: 100%;
+    margin: $spacing--bbbb 0 $spacing--s;
+    max-width: 90%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-top: 0;
     &__tab-bar {
       left: auto;
       margin-left: auto;
@@ -209,8 +208,13 @@ $border: solid 3px $color__white;
   @include from(large) {
     width: $width--large;
     max-width: 90%;
-    height: 60rem;
+    height: 50rem;
+    max-height: 90%;
     flex-wrap: nowrap;
+    margin-top: $spacing--bb;
+    &__view {
+      // overflow: scroll;
+    }
     &__controls,
     &__output,
     &__preview {

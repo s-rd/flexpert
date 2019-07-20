@@ -3,7 +3,7 @@
     <ul class="playground__tab-bar">
       <li class="playground__tab boxes">
         <a>
-          {{ boxes }} boxes
+          {{ boxes }} items
           <span @click.prevent="addBox" class="add" :class="{ 'add--disabled': !canAdd }">+</span>
           <span @click.prevent="removeBox" class="remove" :class="{ 'remove--disabled': !canRemove }">-</span>
         </a>
