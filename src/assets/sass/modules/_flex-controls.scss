@@ -18,18 +18,29 @@
     &-title {
       margin: 0.1rem 0;
       font-weight: 500;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       letter-spacing: 0.025em;
     }
     &-attribute {
       margin: 0.1rem 0;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       opacity: 0.5;
     }
     &-select {
 
+    }
+  }
+
+  @include from(medium) {
+    &__item {
+      &-title {
+        font-size: 1.4rem;
+      }
+      &-attribute {
+        font-size: 0.9rem;
+      }
     }
   }
 }

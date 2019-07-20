@@ -1,5 +1,9 @@
 $padding: 1rem 1.3rem;
-$width--min: 13rem;
+$padding--mobile: 0.7rem 1.0rem;
+$width: 13rem;
+$width--mobile: 10rem;
+$font__size: 1.2rem;
+$font__size--mobile: 1.1rem;
 
 .select-box {
   position: relative;
@@ -7,10 +11,10 @@ $width--min: 13rem;
 
   &__box {
     background: $color__primary;
-    padding: $padding;
-    width: $width--min;
+    padding: $padding--mobile;
+    width: $width--mobile;
     max-width: 100%;
-    font-size: 1.2rem;
+    font-size: $font__size--mobile;
     font-weight: 500;
     &:hover {
       background: darken($color__primary, 5);
@@ -58,9 +62,9 @@ $width--min: 13rem;
     display: block;
     background: darken($color__primary, 10);
     color: $color__white;
-    font-size: 1.2rem;
+    font-size: $font__size--mobile;
     font-weight: 500;
-    padding: $padding;
+    padding: $padding--mobile;
     border-bottom: solid 3px darken($color__primary, 15);
     opacity: 0;
     transform: scale(0.9);
@@ -97,6 +101,18 @@ $width--min: 13rem;
     }
     .select-box__arrow {
       transform: rotate(180deg);
+    }
+  }
+
+  @include from(medium) {
+    &__box {
+      padding: $padding;
+      width: $width;
+      font-size: $font__size;
+    }
+    &__option {
+      padding: $padding;
+      font-size: $font__size;
     }
   }
 }
