@@ -2,7 +2,7 @@
   <div class="flex-preview">
     <ul class="playground__tab-bar">
       <li class="playground__tab boxes">
-        <a href="#">
+        <a>
           {{ boxes }} boxes
           <span @click.prevent="addBox" class="add" :class="{ 'add--disabled': !canAdd }">+</span>
           <span @click.prevent="removeBox" class="remove" :class="{ 'remove--disabled': !canRemove }">-</span>

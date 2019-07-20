@@ -10,7 +10,7 @@ $border: solid 3px $color__white;
   border: $border;
 
   &__tab {
-    width: 10.5rem;
+    flex-basis: 50%;
     border-right: $border;
     a {
       display: block;
@@ -55,6 +55,9 @@ $border: solid 3px $color__white;
       }
     }
     &:last-child {
+      border-left: none;
+    }
+    &:first-child {
       border-right: none;
     }
     &:hover {
@@ -73,12 +76,13 @@ $border: solid 3px $color__white;
   }
   &__tab-bar {
     display: flex;
+    flex-direction: row-reverse;
     position: absolute;
     bottom: 100%;
-    margin: 0;
     padding: 0;
-    margin-right: -3px;
+    margin: 0 -3px;
     list-style: none;
+    left: 0;
     right: 0;
     width: auto;
     border: $border;
@@ -119,8 +123,14 @@ $border: solid 3px $color__white;
     .playground__tab {
       min-width: auto;
       width: 33.3333%;
+      border-left: $border;
+      border-right: none;
+      &:first-child {
+        border-left: none;
+      }
     }
     .playground__tab-bar {
+      flex-direction: row;
       width: auto;
       left: 0;
       margin-left: -3px;
@@ -161,6 +171,19 @@ $border: solid 3px $color__white;
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 0;
+    &__tab-bar {
+      left: auto;
+      margin-left: auto;
+      flex-direction: row;
+    }
+    &__tab {
+      width: 10.5rem;
+      flex-basis: auto;
+      border-left: none;
+      border-right: $border;
+      &:first-child { border-left: none; }
+      &:last-child { border-right: none; }
+    }
     &__controls {
       flex-basis: 50%;
       border-right: $border;

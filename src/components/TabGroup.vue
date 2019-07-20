@@ -8,7 +8,7 @@
         class="playground__tab"
         :class="activeTab === tab.i && 'playground__tab--active'"
       >
-        <a href="#" @click="setActiveTab(tab.i)">{{ tab.title }}</a>
+        <a href="#" @click.prevent="setActiveTab(tab.i)">{{ tab.title }}</a>
       </li>
     </ul>
 
