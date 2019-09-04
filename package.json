@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^7.3.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {
@@ -31,15 +31,15 @@
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
-    "node-notifier": "^5.1.2",
-    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "node-notifier": "^5.4.3",
+    "optimize-css-assets-webpack-plugin": "^3.2.1",
     "ora": "^1.2.0",
-    "portfinder": "^1.0.13",
+    "portfinder": "^1.0.23",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
-    "rimraf": "^2.6.0",
-    "semver": "^5.3.0",
+    "rimraf": "^2.7.1",
+    "semver": "^5.7.1",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
@@ -49,7 +49,7 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.2.2"
   },
   "engines": {
     "node": ">= 6.0.0",
