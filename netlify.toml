@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/"
+  from = "https://fl.expert"
   to = "https://flexpert.netlify.app"
   status = 301
   force = true
